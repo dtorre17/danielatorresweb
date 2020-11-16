@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Police Brutality + Big Data</title>
+    
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    #log {
+        height: auto;
+        width: 50%
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    /*body {
+        background-color: black;
+        padding: 20px;
+    }*/
+    
+    /* Center website */
+    .main {
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    .row {
+        margin: 8px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+    padding: 8px;
+    }
+
+    /* Create 2 equal columns that floats next to each other */
+    .column {
+    float: left;
+    width: 50%;
+    }
+
+    /* Clear floats after rows */ 
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Content */
+    .content {
+    /*background-color: white;*/
+        padding: 6px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+    }
+
+</style>
+
+<body>
+
+	<!--================ Start Header Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display 
+                    <div id="images">
+                        <a class="navbar-brand logo_h" href="../index.html"><img src="../img/core-img/dt-logo.png" align="left" alt=""></a>
+                    </div>-->
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-end">
+                            <li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="#">coming soon</a></li>
+									<!-- <li class="nav-item"><a class="nav-link" href="../bloghome.html">Posts</a></li> -->
+								</ul>
+							</li> 
+                            
+                            <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="../about-us.html">About</a></li>-->
+                        </ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================ End Header Area =================-->
+
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>inequality in tech</h2>
+                    <h1>POLICE BRUTALITY + BIG DATA</h1>
+                    <div class="page_link">
+                      <!--  <a>Re-imagining Spotify's navigation bar for more efficient playlist finding.</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+
+	<!--================Start Portfolio Details Area =================-->
+	<section class="portfolio_details_area section_gap">
+        <div class="container">
+            <div class="portfolio_details_inner">
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-5">
+                        <div class="portfolio_right_text mt-30">
+                            <h2 class="text-uppercase">INTRODUCTION</h4>
+                            <p>
+                                Police brutality ,,,,.,.......
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Create a div where the graph will take place -->
+                        <!-- Create a div where the graph will take place -->
+                    <div id="my_dataviz"></div>
+
+                    <p>
+                    <label># bins</label>
+                    <input type="number" min="1" max="100" step="30" value="20" id="nBin">
+                    </p>
+
+                        <!-- <div class="left_img" style="padding-left: 25px;">
+                            <img class="img-fluid" src="img/portfolio/spot.jpeg" alt="Image of the Spotify application from Unsplashed.com">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="left_img">
+                            <img class="img-fluid" src="img/portfolio/portfolio-details.jpg" alt="A photo of the CI subject smiling">
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-5">
+                        <div class="portfolio_right_text mt-30">
+                            <h4 class="text-uppercase">TARGET USERS</h4>
+                            <p>
+                                <a href="https://www.statista.com/statistics/475821/spotify-users-age-usa/#:~:text=Spotify%20users%20in%20the%20U.S.%202018%2C%20by%20age&text=As%20of%20March%202018%2C%20Spotify's,18%20and%2024%20years%20old">About 50%</a> of Spotify’s users are in the 18-34 year age range.
+                                Aside from the general use of streaming music, Spotify Premium users are often fond of the service’s personalized playlist suggestions. 
+
+                            </p>
+                            <h4 class="text-uppercase">CI Subject</h4>
+                            <ul class="list">
+                                <li><span>Name:</span>Elise</li>
+                                <li><span>Age:</span>21</li>
+                                <li><span>Description:</span>As Elise is a regular user of Spotify on both desktop and mobile phone, 
+                                    she is an ideal candidate for the assignment's contextual inquiry process.
+                                    Elise reports that she listens to playlists of her own making and also those made by Spotify/other users. 
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-uppercase">CONTEXTUAL INQUIRY</h4>
+                <div class="row">
+                    <div class="banner_content text-center">
+                        <img src="img/portfolio/spot-scrn1.png" alt="Screenshot of Spotify GUI" style="width:85%;" >
+                    </div>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="column">
+                        <div class="content">
+                            <h2 style="padding-left: 10px; color: black; ">Task 1</h2>
+                            <p style="padding-left: 10px; padding-right: 10px;"> 
+                                The user was asked to open the Spotify web application, and try to adjust the size of the navigation bars on
+                                both the right and left-hand sides of the screen. The user hovered over the vertical border of the left-side navigation and
+                                was able to resize the menu. For the right-hand side "Friend Activity" menu, the user attempted to resize the 
+                                bar in the same manner, but was unsuccessful. She was also unable to minimize the bar completely. 
+                            </p>
+                            <img src="img/portfolio/task1.png" style="width:100%;">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="content">
+                            <h2 style="padding-left: 10px; color: black;">Task 2</h2>
+                            <p style="padding-left: 10px; padding-right: 10px;"> 
+                                As a second task, the user was asked to find a Spotify playlist that she "liked." (Note: In Spotify, users can
+                                only "like" playlists that they are not the owners of, so the user was being asked to find a playlist that she 
+                                did not originally create.) On the home screen, the user verified that there is does not exist a way to be
+                                channeled to a page that displays her save playlists. Upon realizing playlists are only listed on the left-side nav bar, 
+                                the user scrolled through the list under the "Playlist" heading. The user clicked through a few playlists before
+                                finding one of the correct type.
+                            </p>
+                            <img src="img/portfolio/task2.png" style="width:100%;">
+                        </div>
+                    </div>
+                    <p style="padding-left: 20px; padding-right: 30px;">
+                        The above sequence models track the actions that the participant took in response to directions given to her.
+                        This initial evaluation of how the user interacted with the current Spotify interface comprised the first part of
+                        this project's contextual inquiry (CI). The behavior exhibited informed the design thinking to make 
+                        improvements to the user experiene with my lo-fidelity prototye.
+                    </p>
+                -->
+                <!-- END GRID -->
+                 <!--================ VID 
+                </div>
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-5">
+                        <div class="portfolio_right_text mt-30">
+                            <h2 class="text-uppercase">Lo-Fidelty Prototype</h4>
+                            <p>
+                                To optimize screen space and minimze time spent looking for playlists, my lo-fidelty, paper prototype 
+                                introduces more customization with the navigation bars. The prototype also introduces a way to view
+                                playlists with their own page-view, rather than only on the left-side nav bar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="left_img" style="padding-left: 25px;">
+                            <img class="img-fluid" src="img/portfolio/spot.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="filters-content">
+				<div class="row portfolio-grid justify-content-center">
+					<div class="col-lg-4 col-md-6 all">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/a1-planning.jpeg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/a1-planning.jpeg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<p>Initial planning sketch</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/a1-home.jpeg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/a1-home.jpeg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<p>Home page</p>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/a1-p1.jpeg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/a1-p1.jpeg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<p>Page view of all saved playlists</p>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/a1-p2.jpeg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/a1-p2.jpeg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<p>Bookmarked playlists</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            =================-->
+            <!--===========
+            <section class="newsletter_area"></section>
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-12">
+                            <div class="subscription_box text-center">
+                                <h2 class="text-uppercase text-white" style="padding: 10px;">evaluation</h2>
+                                <div class="subcribe-form" id="mc_embed_signup">
+                                    
+                                    
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tt0_AQI1RLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            ============-->
+              <!--================ end video Area =================-->
+        </div>
+        
+    </section>
+    <!--================End Portfolio Details Area =================-->
+    
+   
+        
+    <!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="footer_top flex-column">
+						<div class="footer_logo">
+							<a href="index.html">
+								<img id="log" src="img/dt-logo.png" alt="">
+							</a>							
+						</div> 
+					</div>
+				</div>
+			</div>
+			<div class="row footer_bottom justify-content-center">
+				
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<p> &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</div>
+		</div>
+	</footer>
+	<!--================End Footer Area =================-->
+    <script src="d3charts.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope-min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="js/gmaps.min.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
