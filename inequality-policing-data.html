@@ -83,6 +83,7 @@
         }
     }
 
+
 </style>
 
 <body>
@@ -130,10 +131,10 @@
             <div class="container">
                 <div class="banner_content text-center">
                     
-                    <h1>POLICE BRUTALITY + BIG DATA</h1>
+                    <h1>POLICE BRUTALITY IN THE US </h1>
                     <h2></h2>
                     <div class="page_link">
-                        <a>An analysis of data's impact in social justice</a>
+                        <a>Data visualization pertaining to racial inequalities in policing</a>
                       <!--  <a>Re-imagining Spotify's navigation bar for more efficient playlist finding.</a>-->
                     </div>
                 </div>
@@ -174,13 +175,20 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="left_img">
-                            <div id="test_dataviz"></div>
+                            
+                    <!-- Create a div where the graph will take place -->
+                    <h4 class="text-uppercase">ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h4>
+                            <div id="policehomicides"></div>
+                            <!-- <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->        
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
-                            <h4 class="text-uppercase">TARGET USERS</h4>
+                            <button class="genric-btn primary small" onclick="update(whiteHomRates)">White Homicide Rates by Police</button>
+                            <button class="genric-btn primary small" onclick="update(blackHomRates)">Black Homicide Rates by Police</button>
+                            <button class="genric-btn primary small" onclick="update(allHomRates)">All Homicide Rates by Police</button>
                             <p>
+                            </br>
                                 <a href="https://www.statista.com/statistics/475821/spotify-users-age-usa/#:~:text=Spotify%20users%20in%20the%20U.S.%202018%2C%20by%20age&text=As%20of%20March%202018%2C%20Spotify's,18%20and%2024%20years%20old">About 50%</a> of Spotify’s users are in the 18-34 year age range.
                                 Aside from the general use of streaming music, Spotify Premium users are often fond of the service’s personalized playlist suggestions. 
 
