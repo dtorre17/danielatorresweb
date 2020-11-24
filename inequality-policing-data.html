@@ -83,6 +83,59 @@
         }
     }
 
+    /* pop-up*/
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* The actual popup (appears on top) */
+    .popup .popuptext {
+        visibility: hidden;
+        width: 300px;
+        color: #fff;
+        background: #f8b600;
+        border: 1px solid transparent;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #f8b600 transparent transparent transparent;
+    }
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn .5s;
+    animation: fadeIn 1s
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+    }
+
 
 </style>
 
@@ -131,10 +184,10 @@
             <div class="container">
                 <div class="banner_content text-center">
                     
-                    <h1>POLICE BRUTALITY IN THE US </h1>
+                    <h2>POLICE BRUTALITY IN THE US </h2>
                     <h2></h2>
                     <div class="page_link">
-                        <a>Data visualization pertaining to racial inequalities in policing</a>
+                        <h4>Data visualization pertaining to racial inequalities in policing</h4>
                       <!--  <a>Re-imagining Spotify's navigation bar for more efficient playlist finding.</a>-->
                     </div>
                 </div>
@@ -158,44 +211,95 @@
                                 has been problematic since the inception of our police force. 
                             </br>
                                 Our anaylsis of data from some of the largest police departments in the U.S. depicts the racial disparity 
-                                that exists today. We have made use of a robust <a href="kaggle.com"> dataset</a> and litigal work centered
-                                around the issue of police brutality. We hope to present an objective, factual visualization of the 
-                                marginalized groups' unjust pattern of treatment with the police in the U.S.
-                                
-
+                                that exists today. We have made use of a comprehensive dataset and<a href="https://online.ucpress.edu/nclr/article-abstract/20/2/181/68886"> litigal work</a> centered
+                                around the issue of police brutality. We hope to present an objective, factual visualization of  
+                                marginalized groups' unjust pattern of treatment by the police in the U.S.
                             </p>
+                            <p>
+                            </br>
+                        </p>
+                        <h3 class="text-uppercase">ABOUT THE DATA</h3>
+                        <!-- <div id="my_dataviz"></div>-->
+                        <p>
+                            The data presented is taken from <a href="https://mappingpoliceviolence.org/aboutthedata"> mappingpoliceviolence.org</a> and was processed into
+                            csv format and categorized by a data scientist, <a href="https://www.kaggle.com/jpmiller"> John Miller</a>. Miller published a robust, <a href="https://www.kaggle.com/jpmiller/police-violence-in-the-us"> 3-part dataset</a>
+                            that contains pertinent information on police violence over the years 2011-2018. Our group downloaded particular sets to 
+                            create graphic representations from and only scraped the surface of the available resources.  
+                        </p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="offset-lg-1 col-lg-5">
                         <!-- Create a div where the graph will take place -->
                         <!-- Create a div where the graph will take place -->
-                        <h4 class="text-uppercase">GRAPH TITLE</h4>
-                        <div id="my_dataviz"></div>
-
+                        <div class="portfolio_left_text mt-30">
+                            <div class="row">
+                                <blockquote class="generic-blockquote">
+                                    <h2 class="mb-30 title_color">Terminology</h2>
+                                    <div class="popup" onclick="popFunct()"> <button class="genric-btn info circle">Police Killing</button>
+                                        <span class="popuptext" id="policeKillings">
+                                            A case where a person dies as a result of being shot, beaten, restrained, 
+                                            intentionally hit by a police vehicle, pepper sprayed, tasered, or otherwise harmed by 
+                                            police officers, whether on-duty or off-duty.
+                                        </span>
+                                    </div> 
+                                    <p style="padding-bottom: 10px;">
+                                    </p>
+                                    <h4>Unarmed:</h4>
+                                    <ul class="list">
+                                        <li>
+                                            - not holding any objects or weapons when killed
+                                        </li>
+                                        <li>
+                                            - holding household/personal items that were not used to attack others (cellphone, video game controller, cane, etc.)
+                                        </li>
+                                        <li>
+                                            - holding a toy weapon (BB gun, pellet gun, air rifle, toy sword)</li>
+                                        <li>
+                                            - an innocent bystander or hostage killed by a police shooting or other police use of force
+                                        </li>
+                                        <li>
+                                            - a person or motorist killed after being intentionally hit by a police car or as a result of hitting police stop sticks during a pursuit
+                                        </li>
+                                    </ul>
+                                        <p>
+                                        </br>
+                                        Vocbulary as defined in <a href="https://mappingpoliceviolence.org/aboutthedata"> mappingpoliceviolence.org</a></p>
+                                    </div>
+                                        
+                                </blockquote>
+                                
+                            </div>
                         <!-- <div class="left_img" style="padding-left: 25px;">
                             <img class="img-fluid" src="img/portfolio/spot.jpeg" alt="Image of the Spotify application from Unsplashed.com">
                         </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="left_img">
                             
-                    <!-- Create a div where the graph will take place -->
-                    <h4 class="text-uppercase">ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h4>
+                    <!-- Create a div where the graph will take place Avg.Annual.Police.Homicide.Rate -->
+                    <h3 class="text-uppercase">AVERAGE ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h3>
                             <div id="policehomicides"></div>
                             <!-- <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->        
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
+                            <p>
+                            </br>
+                                Click to see...                                 
+                            </p>
                             <button class="genric-btn primary small" onclick="update(whiteHomRates)">White Homicide Rates by Police</button>
                             <button class="genric-btn primary small" onclick="update(blackHomRates)">Black Homicide Rates by Police</button>
                             <button class="genric-btn primary small" onclick="update(allHomRates)">All Homicide Rates by Police</button>
                             <p>
                             </br>
-                                <a href="">Explain what the</a>  homicide ratios are  .....
-                                
+                                The rates to the left were calculated from <a href="https://www.kaggle.com/jpmiller/police-violence-in-the-us?select=deaths_arrests.csv">data over the years 2013-2018</a>.
+                                The police departments presented are some of the largest in the U.S. with homicide rates normalized for population.
+                            </br>
+                                Reno P.D. has the highest average rate for police killings of black people, at 
                             </p>
                             <!-- 
                             <h4 class="text-uppercase">CI Subject</h4>
@@ -212,11 +316,6 @@
                     </div>
                 </div>
                 <h2 class="text-uppercase">THE STOP AND FRISK</h4>
-                <div class="row">
-                    <div class="banner_content text-center">
-                        <img src="img/portfolio/spot-scrn1.png" alt="Screenshot of Spotify GUI" style="width:85%;" >
-                    </div>
-                </div>
                 
                 <div class="row">
                     <div class="column">
@@ -251,10 +350,15 @@
                         this project's contextual inquiry (CI). The behavior exhibited informed the design thinking to make 
                         improvements to the user experiene with my lo-fidelity prototye.
                     </p>
-               
-                <!-- END GRID -->
-                 <!--================ VID 
                 </div>
+                <!-- END GRID -->
+                <div class="row">
+                    <div class="banner_content text-center">
+                        <!-- Max's map -->
+                        <img src="img/portfolio/spot-scrn1.png" alt="Screenshot of Spotify GUI" style="width:85%;" >
+                    </div>
+                </div>
+                <!--================ VID 
                 <div class="row">
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
@@ -393,6 +497,12 @@
 	</footer>
 	<!--================End Footer Area =================-->
     <script src="d3charts.js"></script>
+    <script>
+        function popFunct() {
+            var popup = document.getElementById("policeKillings");
+            popup.classList.toggle("show");
+            }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
