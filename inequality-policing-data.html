@@ -9,6 +9,8 @@
     
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="vendors/linericon/style.css">
@@ -333,7 +335,7 @@
                                 case, Terry v. Ohio, in which the U.S. Supreme Court addressed the compatibility of this tactic with the Fourth Amendment's
                                 ban on "unreasonable searches and seizures." 
                             </p>
-                            <img src="img/portfolio/task1.png" style="width:100%;">
+                            <!-- image used to be here-->
                         </div>
                     </div>
                     <div class="column">
@@ -362,23 +364,25 @@
                                 </div>
                                     
                             </blockquote>
-                            <img src="img/portfolio/task2.png" style="width:100%;">
+                            <!-- image used to be here-->
                         </div>
                     </div>
                     <p style="padding-left: 20px; padding-right: 30px;">
-                        The above sequence models track the actions that the participant took in response to directions given to her.
-                        This initial evaluation of how the user interacted with the current Spotify interface comprised the first part of
-                        this project's contextual inquiry (CI). The behavior exhibited informed the design thinking to make 
-                        improvements to the user experiene with my lo-fidelity prototye.
+                        The above sequence models track the 
                     </p>
-                </div>
                 <!-- END GRID -->
                 <div class="row">
+                    <div id="sqf_cal"></div>
+                    <!-- 
                     <div class="banner_content text-center">
-                        <!-- Max's map -->
+                        Max's map 
                         <img src="img/portfolio/spot-scrn1.png" alt="Screenshot of Spotify GUI" style="width:85%;" >
-                    </div>
+                    </div>-->
                 </div>
+                
+        </div>
+
+                
                 <!--================ VID 
                 <div class="row">
                     <div class="offset-lg-1 col-lg-5">
@@ -518,7 +522,6 @@
 	</footer>
 	<!--================End Footer Area =================-->
     <script src="d3charts.js"></script>
-    <script src="cal.js"></script>
     <script>
         function popFunct() {
             var popup = document.getElementById("policeKillings");
