@@ -225,7 +225,7 @@
                         <p>
                             The data presented is taken from <a href="https://mappingpoliceviolence.org/aboutthedata"> mappingpoliceviolence.org</a> and was processed into
                             csv format and categorized by a data scientist, <a href="https://www.kaggle.com/jpmiller"> John Miller</a>. Miller published a robust, <a href="https://www.kaggle.com/jpmiller/police-violence-in-the-us"> 3-part dataset</a>
-                            that contains pertinent information on police violence over the years 2011-2018. Our group downloaded particular sets to 
+                            that contains pertinent information on police violence over the last decade. Our group downloaded particular sets to 
                             create graphic representations from and only scraped the surface of the available resources.  
                         </p>
                         </div>
@@ -295,8 +295,8 @@
                     </div>
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
+                            <h4>How do police homicides of white and black people compare across large cities?</h4>
                             <p>
-                            </br>
                                 Click to see...                                 
                             </p>
                             <button class="genric-btn primary small" onclick="update(whiteHomRates)">White Homicide Rates by Police</button>
@@ -308,6 +308,7 @@
                                 The police departments presented are some of the largest in the U.S. with homicide rates normalized for population.
                             </br>
                                 Reno P.D. has the <a href="https://github.com/dtorre17/danielatorresweb/blob/master/highrates.csv">highest average rate</a> for police killings of black people, at 71.5.
+                                Compare this to their annual average homicide rate of 8.9.
                             </p>
                             <!-- 
                             <h4 class="text-uppercase">CI Subject</h4>
@@ -331,9 +332,11 @@
                             <h2>Terry Vs. Ohio</h2>
                             <p> 
                                 <h4>Background</h4>
-                                The "stop-and-frisk", or the "Terry stop", has been a hihgly disputed policing practice. The latter name comes from a landmark
-                                case, Terry v. Ohio, in which the U.S. Supreme Court addressed the compatibility of this tactic with the Fourth Amendment's
-                                ban on "unreasonable searches and seizures." 
+                                The "stop-and-frisk", or the "Terry stop", is a highly disputed policing practice. The latter name comes from a landmark
+                                case, Terry v. Ohio (1968), in which the U.S. Supreme Court addressed the compatibility of this tactic with the Fourth Amendment's
+                                ban on "unreasonable searches and seizures." The Court upheld this tactic's constitutionality, so long as it was supported by 
+                                "specific and articulable facts" that justified criminality and danger.  While "articulable facts" should diminish racially biased 
+                                stops, racial prejudice in this practice is still observed in data from police departments nationwide. 
                             </p>
                             <!-- image used to be here-->
                         </div>
@@ -360,24 +363,43 @@
                                     </li>
                                     <p>
                                     </br>
-                                    Background info from <a href=""> enter article</a></p>
+                                    Background info from <a href="https://online.ucpress.edu/nclr/article-abstract/20/2/181/68886"> Combatting Police Data in the Age of Big Data (Goel 2017)</a></p>
                                 </div>
                                     
                             </blockquote>
                             <!-- image used to be here-->
                         </div>
+                        <div class="column">
+                            <div class="content">
+                                <h2>New York City PD Terry Stops</h2>
+                                <p style="padding-right: 20px;"> 
+                                In the 1990s, 30 years after Terry v. Ohio, the New York Police Department (NYPD) was the only major police agency regularly collecting data on their
+                                stop-and-frisk practices. Today, all police agencies are required to record their stops. The collection of stop-and-frisk data is not 
+                                standardized nationally, however, as a survey showed that 23 out of 44 major PDs don't require specific data collection. The limitations in this kind 
+                                of data from police departments is daunting and poses challenges since the collection is not uniform. For example, Los Angeles and Oakland
+                                PD do not consistently record the race of the suspect. Even in NYC, a federal monitor’s report to the court found
+                                that in 25% of stops in 2015, officers failed to properly document the suspicion that prompted the stop. <br>
+                                The monthly calendar to the right depicts data from NYPD on their stop-and-frisk practices. The number of people stopped that were tagged as BLACK 
+                                consistently contributes 50-60% of the month's stops. Compare this to how approximately <a href="https://www.census.gov/quickfacts/newyorkcitynewyork"> 25% </a>
+                                of NYC's population is Black / African American.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="content">
+                                <h3>Number of people stopped monthly by NYPD with racial description</h3>
+                                <div id="sqf_cal"></div>
+                            </div>
+                        </div>
                     </div>
                     <p style="padding-left: 20px; padding-right: 30px;">
                         The above sequence models track the 
                     </p>
+
                 <!-- END GRID -->
                 <div class="row">
-                    <div id="sqf_cal"></div>
-                    <!-- 
-                    <div class="banner_content text-center">
-                        Max's map 
-                        <img src="img/portfolio/spot-scrn1.png" alt="Screenshot of Spotify GUI" style="width:85%;" >
-                    </div>-->
+                    
+                    <!-- full size row -->
                 </div>
                 
         </div>

@@ -122,15 +122,15 @@ update(allHomRates)
 
 
 // set the dimensions and margins of the calendar
-var marginCal = {top: 80, right: 50, bottom: 100, left: 80},
-  width = 750 - marginCal.left - marginCal.right,
-  height = 400 - marginCal.top - marginCal.bottom;
+var marginCal = {top: 20, right: 50, bottom: 90, left: 50},
+  widthCal = 750 - marginCal.left - marginCal.right,
+  heightCal = 400 - marginCal.top - marginCal.bottom;
 
 // append the svg object to the body of the page
 var cal = d3.select("#sqf_cal")
 .append("svg")
-  .attr("width", width + marginCal.left + marginCal.right)
-  .attr("height", height + marginCal.top + marginCal.bottom)
+  .attr("width", widthCal + marginCal.left + marginCal.right)
+  .attr("height", heightCal + marginCal.top + marginCal.bottom)
 .append("g")
   .attr("transform",
         "translate(" + marginCal.left + "," + marginCal.top + ")");
@@ -149,7 +149,7 @@ d3.csv("https://raw.githubusercontent.com/dtorre17/danielatorresweb/master/sqfda
     .padding(0.05);
   cal.append("g")
     .style("font-size", 14)
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0," + heightCal + ")")
     .call(d3.axisBottom(x).tickSize(0))
     .selectAll("text")  
             .style("text-anchor", "end")
@@ -161,7 +161,7 @@ d3.csv("https://raw.githubusercontent.com/dtorre17/danielatorresweb/master/sqfda
 
   // Build Y scales and axis:
   var y = d3.scaleBand()
-    .range([ height, 0 ])
+    .range([ heightCal, 0 ])
     .domain(myVars)
     .padding(0.05);
   cal.append("g")
@@ -198,6 +198,7 @@ d3.csv("https://raw.githubusercontent.com/dtorre17/danielatorresweb/master/sqfda
       .html("Stop-and-frisks recorded in <br>" + d.MONTH + " " +d.YEAR + " by racial description: <br>"
             + "BLACK:" + d.BLACK + "<br> BLACK HISPANIC:" + d.BLACKHISP + "<br> WHITE HISPANIC:"
             + d.WHITEHISP + "<br> WHITE:" + d.WHITE + "<br> ASIAN/PACF ISLANDER:" + d.ASIAN + "<br> TOTAL:" + d.TOTAL)
+      .style("position-relative")  
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -229,20 +230,12 @@ d3.csv("https://raw.githubusercontent.com/dtorre17/danielatorresweb/master/sqfda
     .on("mouseleave", mouseleave)
 })
 
-// Add title to graph
-cal.append("text")
-        .attr("x", 0)
-        .attr("y", -50)
-        .attr("text-anchor", "left")
-        .style("font-size", "22px")
-        .text("Number of people stopped monthly by NYPD with racial description");
-
 // Add subtitle to graph
 cal.append("text")
         .attr("x", 0)
-        .attr("y", -20)
+        .attr("y", -5)
         .attr("text-anchor", "left")
         .style("font-size", "14px")
         .style("fill", "grey")
         .style("max-width", 400)
-        .text("A short description of the take-away message of this chart.");
+        .text("Hover over each block to see that month's summary of stop-and-frisks in NYC");
