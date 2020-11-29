@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Police Brutality + Big Data</title>
-    
+
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -35,13 +35,13 @@
         background-color: black;
         padding: 20px;
     }*/
-    
+
     /* Center website */
     .main {
         max-width: 1000px;
         margin: auto;
     }
-    
+
     .row {
         margin: 8px -16px;
     }
@@ -58,7 +58,7 @@
     width: 50%;
     }
 
-    /* Clear floats after rows */ 
+    /* Clear floats after rows */
     .row:after {
     content: "";
     display: table;
@@ -148,7 +148,7 @@
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display 
+                    <!-- Brand and toggle get grouped for better mobile display
                     <div id="images">
                         <a class="navbar-brand logo_h" href="../index.html"><img src="../img/core-img/dt-logo.png" align="left" alt=""></a>
                     </div>-->
@@ -168,8 +168,8 @@
 									<li class="nav-item"><a class="nav-link" href="#">coming soon</a></li>
 									<!-- <li class="nav-item"><a class="nav-link" href="../bloghome.html">Posts</a></li> -->
 								</ul>
-							</li> 
-                            
+							</li>
+
                             <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
                             <!-- <li class="nav-item"><a class="nav-link" href="../about-us.html">About</a></li>-->
                         </ul>
@@ -185,7 +185,7 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    
+
                     <h2>POLICE BRUTALITY IN THE US </h2>
                     <h2></h2>
                     <div class="page_link">
@@ -207,14 +207,14 @@
                         <div class="portfolio_right_text mt-30">
                             <h2 class="text-uppercase">INTRODUCTION</h4>
                             <p>
-                                After a video went viral of police using excessive force that caused the death of George Floyd in May 2020, 
-                                the issue of police brutality was brought to the forefront of American life as protests 
+                                After a video went viral of police using excessive force that caused the death of George Floyd in May 2020,
+                                the issue of police brutality was brought to the forefront of American life as protests
                                 emerged nationwide for months afterwards. Racially-biased policing in the US, however,
-                                has been problematic since the inception of our police force. 
+                                has been problematic since the inception of our police force.
                             </br>
-                                Our anaylsis of data from some of the largest police departments in the U.S. depicts the racial disparity 
+                                Our anaylsis of data from some of the largest police departments in the U.S. depicts the racial disparity
                                 that exists today. We have made use of a comprehensive dataset and<a href="https://online.ucpress.edu/nclr/article-abstract/20/2/181/68886"> litigal work</a> centered
-                                around the issue of police brutality. We hope to present an objective, factual visualization of  
+                                around the issue of police brutality. We hope to present an objective, factual visualization of
                                 marginalized groups' unjust pattern of treatment by the police in the U.S.
                             </p>
                             <p>
@@ -225,8 +225,8 @@
                         <p>
                             The data presented is taken from <a href="https://mappingpoliceviolence.org/aboutthedata"> mappingpoliceviolence.org</a> and was processed into
                             csv format and categorized by a data scientist, <a href="https://www.kaggle.com/jpmiller"> John Miller</a>. Miller published a robust, <a href="https://www.kaggle.com/jpmiller/police-violence-in-the-us"> 3-part dataset</a>
-                            that contains pertinent information on police violence over the last decade. Our group downloaded particular sets to 
-                            create graphic representations from and only scraped the surface of the available resources.  
+                            that contains pertinent information on police violence over the last decade. Our group downloaded particular sets to
+                            create graphic representations from and only scraped the surface of the available resources.
                         </p>
                         </div>
                     </div>
@@ -239,11 +239,11 @@
                                     <h2 class="mb-30 title_color">Terminology</h2>
                                     <div class="popup" onclick="popFunct()"> <button class="genric-btn info circle">Police Killing</button>
                                         <span class="popuptext" id="policeKillings">
-                                            A case where a person dies as a result of being shot, beaten, restrained, 
-                                            intentionally hit by a police vehicle, pepper sprayed, tasered, or otherwise harmed by 
+                                            A case where a person dies as a result of being shot, beaten, restrained,
+                                            intentionally hit by a police vehicle, pepper sprayed, tasered, or otherwise harmed by
                                             police officers, whether on-duty or off-duty.
                                         </span>
-                                    </div> 
+                                    </div>
                                     <p style="padding-bottom: 10px;">
                                     </p>
                                     <h4>Unarmed:</h4>
@@ -273,9 +273,9 @@
                                         </br>
                                         Vocbulary as defined in <a href="https://mappingpoliceviolence.org/aboutthedata"> mappingpoliceviolence.org</a></p>
                                     </div>
-                                        
+
                                 </blockquote>
-                                
+
                             </div>
                         <!-- <div class="left_img" style="padding-left: 25px;">
                             <img class="img-fluid" src="img/portfolio/spot.jpeg" alt="Image of the Spotify application from Unsplashed.com">
@@ -286,22 +286,22 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="left_img">
-                            
+
                     <!-- Create a div where the graph will take place Avg.Annual.Police.Homicide.Rate -->
                     <h3 class="text-uppercase">AVERAGE ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h3>
                             <div id="policehomicides"></div>
-                            <!-- <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->        
+                            <!-- <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
                             <h4>How do police homicides of white and black people compare across large cities?</h4>
                             <p>
-                                Click to see...                                 
+                                Click to see...
                             </p>
-                            <button class="genric-btn primary small" onclick="update(whiteHomRates)">White Homicide Rates by Police</button>
-                            <button class="genric-btn primary small" onclick="update(blackHomRates)">Black Homicide Rates by Police</button>
-                            <button class="genric-btn primary small" onclick="update(allHomRates)">All Homicide Rates by Police</button>
+                            <button class="genric-btn primary small" onclick="update_h(whiteHomRates)">White Homicide Rates by Police</button>
+                            <button class="genric-btn primary small" onclick="update_h(blackHomRates)">Black Homicide Rates by Police</button>
+                            <button class="genric-btn primary small" onclick="update_h(allHomRates)">All Homicide Rates by Police</button>
                             <p>
                             </br>
                                 The averages to the left were calculated from <a href="https://www.kaggle.com/jpmiller/police-violence-in-the-us?select=deaths_arrests.csv">data over the years 2013-2018</a>.
@@ -310,14 +310,14 @@
                                 Reno P.D. has the <a href="https://github.com/dtorre17/danielatorresweb/blob/master/highrates.csv">highest average rate</a> for police killings of black people, at 71.5.
                                 Compare this to their annual average homicide rate of 8.9.
                             </p>
-                            <!-- 
+                            <!--
                             <h4 class="text-uppercase">CI Subject</h4>
                             <ul class="list">
                                 <li><span>Name:</span>Elise</li>
                                 <li><span>Age:</span>21</li>
-                                <li><span>Description:</span>As Elise is a regular user of Spotify on both desktop and mobile phone, 
+                                <li><span>Description:</span>As Elise is a regular user of Spotify on both desktop and mobile phone,
                                     she is an ideal candidate for the assignment's contextual inquiry process.
-                                    Elise reports that she listens to playlists of her own making and also those made by Spotify/other users. 
+                                    Elise reports that she listens to playlists of her own making and also those made by Spotify/other users.
                                     </li>
                             </ul>
                             -->
@@ -330,13 +330,13 @@
                     <div class="column">
                         <div class="content">
                             <h2>Terry Vs. Ohio</h2>
-                            <p> 
+                            <p>
                                 <h4>Background</h4>
                                 The "stop-and-frisk", or the "Terry stop", is a highly disputed policing practice. The latter name comes from a landmark
                                 case, Terry v. Ohio (1968), in which the U.S. Supreme Court addressed the compatibility of this tactic with the Fourth Amendment's
-                                ban on "unreasonable searches and seizures." The Court upheld this tactic's constitutionality, so long as it was supported by 
-                                "specific and articulable facts" that justified criminality and danger.  While "articulable facts" should diminish racially biased 
-                                stops, racial prejudice in this practice is still observed in data from police departments nationwide. 
+                                ban on "unreasonable searches and seizures." The Court upheld this tactic's constitutionality, so long as it was supported by
+                                "specific and articulable facts" that justified criminality and danger.  While "articulable facts" should diminish racially biased
+                                stops, racial prejudice in this practice is still observed in data from police departments nationwide.
                             </p>
                             <!-- image used to be here-->
                         </div>
@@ -346,8 +346,8 @@
                             <blockquote class="generic-blockquote">
                                 <h4>The Fourth Amendment:</h4>
                                 <ul class="list">
-                                "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and 
-                                seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and 
+                                "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and
+                                seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and
                                 particularly describing the place to be searched, and the persons or things to be seized."
                                 </ul>
                                 <p>
@@ -365,21 +365,21 @@
                                     </br>
                                     Background info from <a href="https://online.ucpress.edu/nclr/article-abstract/20/2/181/68886"> Combatting Police Data in the Age of Big Data (Goel 2017)</a></p>
                                 </div>
-                                    
+
                             </blockquote>
                             <!-- image used to be here-->
                         </div>
                         <div class="column">
                             <div class="content">
                                 <h2>New York City PD Terry Stops</h2>
-                                <p style="padding-right: 20px;"> 
+                                <p style="padding-right: 20px;">
                                 In the 1990s, 30 years after Terry v. Ohio, the New York Police Department (NYPD) was the only major police agency regularly collecting data on their
-                                stop-and-frisk practices. Today, all police agencies are required to record their stops. The collection of stop-and-frisk data is not 
-                                standardized nationally, however, as a survey showed that 23 out of 44 major PDs don't require specific data collection. The limitations in this kind 
+                                stop-and-frisk practices. Today, all police agencies are required to record their stops. The collection of stop-and-frisk data is not
+                                standardized nationally, however, as a survey showed that 23 out of 44 major PDs don't require specific data collection. The limitations in this kind
                                 of data from police departments is daunting and poses challenges since the collection is not uniform. For example, Los Angeles and Oakland
                                 PD do not consistently record the race of the suspect. Even in NYC, a federal monitor’s report to the court found
                                 that in 25% of stops in 2015, officers failed to properly document the suspicion that prompted the stop. <br>
-                                The monthly calendar to the right depicts data from NYPD on their stop-and-frisk practices. The number of people stopped that were tagged as BLACK 
+                                The monthly calendar to the right depicts data from NYPD on their stop-and-frisk practices. The number of people stopped that were tagged as BLACK
                                 consistently contributes 50-60% of the month's stops. Compare this to how approximately <a href="https://www.census.gov/quickfacts/newyorkcitynewyork"> 25% </a>
                                 of NYC's population is Black / African American.
                                 </p>
@@ -392,26 +392,105 @@
                             </div>
                         </div>
                     </div>
-                    <p style="padding-left: 20px; padding-right: 30px;">
-                        The above sequence models track the 
-                    </p>
 
                 <!-- END GRID -->
                 <div class="row">
-                    
-                    <!-- full size row -->
-                </div>
-                
+
+
+
+								<h2 class="text-uppercase">KILLINGS BY AGE RACE AND STATE</h4>
+									<div class="row">
+										<div class="column">
+												<div class="content">
+														<h2>Killings by age and race</h2>
+														<p>
+																<h4>Background</h4>
+														</p>
+														<!-- image used to be here-->
+												</div>
+										</div>
+										<div class="column">
+												<div class="content">
+														<h2>Killlings by Age and Race</h2>
+														<div id="age_race"></div>
+												</div>
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="column">
+												<div class="content">
+														<h2>Killings by State and Race</h2>
+														<div id="map_race"></div>
+														<!-- image used to be here-->
+												</div>
+										</div>
+										<div class="column">
+												<div class="content">
+													<h2>Killings by State and Race</h2>
+
+													<button onclick="update(data1_rm)" class="genric-btn info circle">European-American/White</button>
+													<button onclick="update(data2_rm)" class="genric-btn info circle">African-American/Black</button>
+													<button onclick="update(data3_rm)" class="genric-btn info circle">Asian/Pacific Islander</button>
+													<button onclick="update(data4_rm)" class="genric-btn info circle">Native American/Alaskan</button>
+													<button onclick="update(data5_rm)" class="genric-btn info circle">Hispanic/Latino</button>
+
+												</div>
+										</div>
+
+									</div>
+
+								<h2 class="text-uppercase">POLICE POLICIES</h4>
+									<div class="row">
+
+										<div class='column'>
+											<div class="content">
+
+											<h2>Correlation Matrix</h2>
+											<div id="policies_corr"></div>
+										</div>
+										</div>
+										<div class="column">
+											<h2>Define policies here</h2>
+										</div>
+									</div>
+								</div>
+
+
+							<div class="row">
+								<div class='column'>
+									<h2>Armedness of Victems</h2>
+									<div id="pie_arms"></div>
+
+								</div>
+								<div class='column'>
+									<h2>Button Selectors</h2>
+
+									<button onclick="update_arms(data1_arms)" class="genric-btn info circle">European-American/White</button>
+									<button onclick="update_arms(data2_arms)" class="genric-btn info circle">African-American/Black</button>
+									<button onclick="update_arms(data3_arms)" class="genric-btn info circle">Asian/Pacific Islander</button>
+									<button onclick="update_arms(data4_arms)" class="genric-btn info circle">Native American/Alaskan</button>
+									<button onclick="update_arms(data5_arms)" class="genric-btn info circle">Hispanic/Latino</button>
+
+								</div>
+
+							</div>
+
+
+
+							<div>
+
+
         </div>
 
-                
-                <!--================ VID 
+
+                <!--================ VID
                 <div class="row">
                     <div class="offset-lg-1 col-lg-5">
                         <div class="portfolio_right_text mt-30">
                             <h2 class="text-uppercase">Lo-Fidelty Prototype</h4>
                             <p>
-                                To optimize screen space and minimze time spent looking for playlists, my lo-fidelty, paper prototype 
+                                To optimize screen space and minimze time spent looking for playlists, my lo-fidelty, paper prototype
                                 introduces more customization with the navigation bars. The prototype also introduces a way to view
                                 playlists with their own page-view, rather than only on the left-side nav bar.
                             </p>
@@ -502,8 +581,8 @@
                             <div class="subscription_box text-center">
                                 <h2 class="text-uppercase text-white" style="padding: 10px;">evaluation</h2>
                                 <div class="subcribe-form" id="mc_embed_signup">
-                                    
-                                    
+
+
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/tt0_AQI1RLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -514,12 +593,12 @@
             ============-->
               <!--================ end video Area =================-->
         </div>
-        
+
     </section>
     <!--================End Portfolio Details Area =================-->
-    
-   
-        
+
+
+
     <!--================Footer Area =================-->
 	<footer class="footer_area">
 		<div class="container">
@@ -529,13 +608,13 @@
 						<div class="footer_logo">
 							<!--<a href="index.html">
 								<img id="log" src="img/dt-logo.png" alt="">
-							</a>	-->						
-						</div> 
+							</a>	-->
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row footer_bottom justify-content-center">
-				
+
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 <p> &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -550,6 +629,7 @@
             popup.classList.toggle("show");
             }
     </script>
+		<scrpit src="killing_by_age_race.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
