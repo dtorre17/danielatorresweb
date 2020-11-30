@@ -120,6 +120,73 @@ function update_h(data_h) {
 // Initialize the plot with the first dataset
 update_h(allHomRates)
 
+// Eduardo's graph
+var marginF = {top: 30, right: 30, bottom: 70, left: 60},
+    widthF = 460 - marginF.left - marginF.right,
+    heightF = 400 - marginF.top - marginF.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#ethnicityBreakdown")
+  .append("svg")
+    .attr("width", widthF + marginF.left + marginF.right)
+    .attr("height", heightF + marginF.top + marginF.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + marginF.left + "," + marginF.top + ")");
+
+// Initialize the X axis
+var xF = d3.scaleBand()
+  .range([ 0, widthF ])
+  .padding(0.2);
+var xAxis = svg.append("g")
+  .attr("transform", "translate(0," + heightF + ")")
+
+// Initialize the Y axis
+var yF = d3.scaleLinear()
+  .range([ heightF, 0]);
+var yAxis = svg.append("g")
+  .attr("class", "myYaxis")
+
+
+// A function that create / update the plot for a given variable:
+function update_f(selectedVar) {
+
+  // Parse the Data
+  d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/ethnicity_value.csv", function(data) {
+
+    // X axis
+    xF.domain(data.map(function(d) { return d.group; }))
+    xAxis.transition().duration(1000).call(d3.axisBottom(xF))
+
+    // Add Y axis
+    yF.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
+    yAxis.transition().duration(1000).call(d3.axisLeft(yF));
+
+    // variable u: map data to existing bars
+    var u = svg.selectAll("rect")
+      .data(data)
+
+    // update bars
+    u
+      .enter()
+      .append("rect")
+      .merge(u)
+      .transition()
+      .duration(1000)
+        .attr("x", function(d) { return xF(d.group); })
+        .attr("y", function(d) { return yF(d[selectedVar]); })
+        .attr("width", xF.bandwidth())
+        .attr("height", function(d) { return heightF - yF(d[selectedVar]); })
+        .attr("fill", "#69b3a2")
+  })
+
+}
+// Initialize plot
+update_f('Total')
+
+//end eduardo's graph
+
+
 
 // set the dimensions and margins of the calendar
 var marginCal = {top: 20, right: 50, bottom: 90, left: 50},
