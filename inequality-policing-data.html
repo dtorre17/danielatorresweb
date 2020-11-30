@@ -337,6 +337,13 @@
                                 ban on "unreasonable searches and seizures." The Court upheld this tactic's constitutionality, so long as it was supported by
                                 "specific and articulable facts" that justified criminality and danger.  While "articulable facts" should diminish racially biased
                                 stops, racial prejudice in this practice is still observed in data from police departments nationwide.
+                                <br>
+                                Today, all police agencies are required to record their stops. The collection of stop-and-frisk data is not
+                                standardized nationally, however, as a survey showed that 23 out of 44 major PDs don't require specific data collection. The limitations in this kind
+                                of data from police departments is daunting and poses challenges since the collection is not uniform. For example, Los Angeles and Oakland
+                                PD do not consistently record the race of the suspect. Even in NYC, who is considered the national leader in this kind of data collection,
+                                a federal monitor’s report to the court found
+                                that in 25% of stops in 2015, officers failed to properly document the suspicion that prompted the stop. <br>
                             </p>
                             <!-- image used to be here-->
                         </div>
@@ -373,12 +380,12 @@
                             <div class="content">
                                 <h2>New York City PD Terry Stops</h2>
                                 <p style="padding-right: 20px;">
-                                In the 1990s, 30 years after Terry v. Ohio, the New York Police Department (NYPD) was the only major police agency regularly collecting data on their
-                                stop-and-frisk practices. Today, all police agencies are required to record their stops. The collection of stop-and-frisk data is not
-                                standardized nationally, however, as a survey showed that 23 out of 44 major PDs don't require specific data collection. The limitations in this kind
-                                of data from police departments is daunting and poses challenges since the collection is not uniform. For example, Los Angeles and Oakland
-                                PD do not consistently record the race of the suspect. Even in NYC, a federal monitor’s report to the court found
-                                that in 25% of stops in 2015, officers failed to properly document the suspicion that prompted the stop. <br>
+                                
+                                In Floyd v. City of New York (2013), Judge Scheindlin relied on data from benchmark studies to determine whether blacks and Hispanics were stopped
+                                disproportionately in relation to racial composition, crime rates and various other factors. It was even found the NYPD carried out more stops in areas
+                                with predominantly black and Hispanic populations. Along with evidence from the NYPD that officers were acting with discriminatory intent,
+                                Judge Scheindlin's findings led her to rule that the NYPD's practices were violating the 14th Amendment and ordered a series of reforms to their policing practices.
+                                <br>
                                 The monthly calendar to the right depicts data from NYPD on their stop-and-frisk practices. The number of people stopped that were tagged as BLACK
                                 consistently contributes 50-60% of the month's stops. Compare this to how approximately <a href="https://www.census.gov/quickfacts/newyorkcitynewyork"> 25% </a>
                                 of NYC's population is Black / African American.
@@ -392,22 +399,22 @@
                             </div>
                         </div>
                     </div>
-
+                <div class="section-top-border"></div>
                 <!-- END GRID -->
                 <div class="row">
 
 
 
-								<h2 class="text-uppercase">KILLINGS BY AGE RACE AND STATE</h4>
+								<h2 class="text-uppercase">POLICE KILLINGS BY AGE RACE AND STATE</h4>
 									<div class="row">
 										<div class="column">
 												<div class="content">
 														<h2>Background</h2>
-														<p>
-															These plots are designed to give you an understanding of the demographics of the victems of police violence.
+														<p style="padding-right: 20px;">
+															These plots are designed to give you an understanding of the demographics of the victims of police violence.
 														</p>
-														<p>
-															In the plot to the right, you can mouse over the cells to get an approximate count of how many indivituals from each age
+														<p style="padding-right: 20px;">
+															In the plot to the right, you can mouse over the cells to get an approximate count of how many individuals from each age
 															race and age have been killed by police violence.
 														</p>
 														<!-- image used to be here-->
@@ -415,7 +422,7 @@
 										</div>
 										<div class="column">
 												<div class="content">
-														<h2>Killlings by Age and Race</h2>
+														<h3 style="padding-left: 20px;">Killlings by Age and Race</h3>
 														<div id="age_race"></div>
 												</div>
 										</div>
@@ -424,16 +431,16 @@
 									<div class="row">
 										<div class="column">
 												<div class="content">
-														<h2>Killings by State and Race</h2>
+														<h2 style="padding-left: 10px;">Killings by State and Race</h2>
 														<div id="map_race"></div>
 														<!-- image used to be here-->
 												</div>
 										</div>
 										<div class="column">
 												<div class="content">
-													<h2>Killings by State and Race</h2>
 													<p>
-														Click on each of these buttons to see where the victems of police violence lost thier lives.
+                                                        <br>
+														Click on the buttons below to see where the victims of police violence lost thier lives.
 													</p>
 
 
@@ -447,90 +454,88 @@
 
 												</div>
 										</div>
+                                    </div>           
+                </div>
+                <div class="section-top-border"></div>
+					<h2 class="text-uppercase">POLICE POLICIES</h4>
+							<div class="row">
+								<div class='column'>
+									<div class="content">
 
-									</div>
-
-								<h2 class="text-uppercase">POLICE POLICIES</h4>
-									<div class="row">
-
-										<div class='column'>
-											<div class="content">
-
-											<h2>Correlation Matrix</h2>
-											<div id="policies_corr"></div>
+										<h2 style="padding-left: 150px;">Correlation Matrix</h2>
+										<div id="policies_corr"></div>
 										</div>
-										</div>
-										<div class="column">
-											<h2>Backgroud</h2>
+								</div>
+								<div class="column">
+										<h2>Background</h2>
 
-											<p>
-												This correlation matrix is designed to show the lack of conformity of police policies. Click on the buttons below
-												for a further expliantion of what each term means. Insperiation for this plot was taken from curator of this dataset.
-											</p>
-											<div class="popup" onclick="popFunctrcr()"> <button class="genric-btn info circle">Requires Comprehensive Reporting</button>
-													<span class="popuptext" id="rcr">
-														Any use of force by a member of this department shall be documented promptly, completely and
-														accurately in an appropriate report, depending on the nature of the incident. The officer should
-														articulate the factors perceived and why he/she believed the use of force was reasonable under the
-														circumstances.
-													</span>
-											</div>
-											<div class="popup" onclick="popFunctdti()"> <button class="genric-btn info circle">Duty to Intervene</button>
-													<span class="popuptext" id="dti">
+										<p>
+											This correlation matrix is designed to show the lack of conformity of police policies. Click on the buttons below
+											for a further expliantion of what each term means. Inspiration for this plot was taken from curator of this dataset.
+										</p>
+										<div class="popup" onclick="popFunctrcr()"> <button class="genric-btn info circle">Requires Comprehensive Reporting</button>
+												<span class="popuptext" id="rcr">
+													Any use of force by a member of this department shall be documented promptly, completely and
+													accurately in an appropriate report, depending on the nature of the incident. The officer should
+													articulate the factors perceived and why he/she believed the use of force was reasonable under the
+													circumstances.
+												</span>
+										</div>
+										<div class="popup" onclick="popFunctdti()"> <button class="genric-btn info circle">Duty to Intervene</button>
+												<span class="popuptext" id="dti">
 A police officer is under a duty to intercede and prevent fellow officers from subjecting a citizen to excessive force, and may be held liable for his failure to do so if he observes the use of force and has sufficient time to act to prevent.
-													</span>
-											</div>
-											<p></p>
-											<div class="popup" onclick="popFunctrha()"> <button class="genric-btn info circle">Requires Exhaust All Other Means Before Shooting</button>
-													<span class="popuptext" id="rha">
-														Police officers shall use firearms with a high degree of restraint. Officers' use of firearms, therefore, shall never be considered a routine and is
-														permissible only in defense of life or to prevent serious bodily injury to the officer or others - and then only after all alternative means have been exhausted.
-													</span>
-											</div>
-											<p></p>
-											<div class="popup" onclick="popFunctrsa()"> <button class="genric-btn info circle">Restricts Shooting at Moving Vehicles</button>
-													<span class="popuptext" id="rsa">
+												</span>
+										</div>
+										<p></p>
+										<div class="popup" onclick="popFunctrha()"> <button class="genric-btn info circle">Requires Exhaust All Other Means Before Shooting</button>
+												<span class="popuptext" id="rha">
+													Police officers shall use firearms with a high degree of restraint. Officers' use of firearms, therefore, shall never be considered a routine and is
+													permissible only in defense of life or to prevent serious bodily injury to the officer or others - and then only after all alternative means have been exhausted.
+												</span>
+										</div>
+										<p></p>
+										<div class="popup" onclick="popFunctrsa()"> <button class="genric-btn info circle">Restricts Shooting at Moving Vehicles</button>
+												<span class="popuptext" id="rsa">
 														Firearms shall not be discharged at a moving vehicle unless a person in the vehicle
 														is immediately threatening the officer or another person with deadly force by means
 														other than the vehicle.
-													</span>
-											</div>
-											<p></p>
-											<div class="popup" onclick="popFunctrwb()"> <button class="genric-btn info circle">Requires Warning Before Shooting</button>
-													<span class="popuptext" id="rwb">
-														When feasible, members shall identify themselves as a police officer and issue a warning before discharging a firearm.
-													</span>
-											</div>
-											<p></p>
-											<div class="popup" onclick="popFunctbca()"> <button class="genric-btn info circle">Bans Chokeholds and Strangleholds</button>
-													<span class="popuptext" id="bca">
-														Police Officers are prohibited from utilizing the Lateral Vascular Neck Restraint (LVNR), choke hold, neck hold, and/or any other
-														restraint that restricts free movement of the neck or head.
-													</span>
-											</div>
-											<p></p>
-											<div class="popup" onclick="popFuncthuo()"> <button class="genric-btn info circle">Has Use of Force Continuum</button>
-													<span class="popuptext" id="huo">
-														Law enforcement officers should use only the amount of force necessary to mitigate an incident, make an arrest, or protect themselves or others from harm. The levels, or continuum, of force police use include basic verbal and physical restraint, less-lethal force, and lethal force.
-
-													</span>
-											</div>
-											<div class="popup" onclick="popFunctrde()"> <button class="genric-btn info circle">Requires De-Escalation</button>
-													<span class="popuptext" id="rde">
-De-escalation tactics and techniques are actions used by officers, when safe and feasible without compromising law enforcement priorities, that seek to minimize the likelihood of the need to use force during an incident and increase the likelihood of voluntary compliance.
-													</span>
-											</div>
-											<p></p>
-
-
+												</span>
 										</div>
-									</div>
-								</div>
+										<p></p>
+										<div class="popup" onclick="popFunctrwb()"> <button class="genric-btn info circle">Requires Warning Before Shooting</button>
+												<span class="popuptext" id="rwb">
+														When feasible, members shall identify themselves as a police officer and issue a warning before discharging a firearm.
+												</span>
+										</div>
+										<p></p>
+										<div class="popup" onclick="popFunctbca()"> <button class="genric-btn info circle">Bans Chokeholds and Strangleholds</button>
+												<span class="popuptext" id="bca">
+													Police Officers are prohibited from utilizing the Lateral Vascular Neck Restraint (LVNR), choke hold, neck hold, and/or any other
+													restraint that restricts free movement of the neck or head.
+												</span>
+										</div>
+										<p></p>
+										<div class="popup" onclick="popFuncthuo()"> <button class="genric-btn info circle">Has Use of Force Continuum</button>
+													<span class="popuptext" id="huo">
+													Law enforcement officers should use only the amount of force necessary to mitigate an incident, make an arrest, or protect themselves or others from harm. The levels, or continuum, of force police use include basic verbal and physical restraint, less-lethal force, and lethal force.
 
+													</span>
+										</div>
+										<div class="popup" onclick="popFunctrde()"> <button class="genric-btn info circle">Requires De-Escalation</button>
+												<span class="popuptext" id="rde">
+De-escalation tactics and techniques are actions used by officers, when safe and feasible without compromising law enforcement priorities, that seek to minimize the likelihood of the need to use force during an incident and increase the likelihood of voluntary compliance.
+												</span>
+										</div>
+										<p></p>
+
+
+									</div>
+						</div>
+                        <div class="section-top-border"></div>
 							<h2 class="text-uppercase">Armedness of Victims</h4>
 							<div class="row">
 								<div class='column'>
-									<h2>What were victims armmed with when they were killed?</h2>
+									<h3>What were victims armmed with when they were killed by police?</h3>
 									<div id="pie_arms"></div>
 
 								</div>
@@ -549,14 +554,7 @@ De-escalation tactics and techniques are actions used by officers, when safe and
 
 								</div>
 
-							</div>
-
-
-
-							<div>
-
-
-        </div>
+							</div>					
 
 
                 <!--================ VID
@@ -738,7 +736,7 @@ De-escalation tactics and techniques are actions used by officers, when safe and
 
     </script>
 
-		<scrpit src="killing_by_age_race.js"></script>
+	<scrpit src="killing_by_age_race.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>

@@ -63,26 +63,26 @@ var allHomRates = [
 
 // set the dimensions and margins of the graph
 var marginHom = {top: 30, right: 30, bottom: 100, left: 60},
-   width = 460 - marginHom.left - marginHom.right,
-   height = 500 - marginHom.top - marginHom.bottom;
+   widthHom = 460 - marginHom.left - marginHom.right,
+   heightHom = 500 - marginHom.top - marginHom.bottom;
 
 
 // append the svg object to the body of the page
 var homicide = d3.select("#policehomicides")
  .append("svg")
-   .attr("width", width + marginHom.left + marginHom.right)
-   .attr("height", height + marginHom.top + marginHom.bottom)
+   .attr("width", widthHom + marginHom.left + marginHom.right)
+   .attr("height", heightHom + marginHom.top + marginHom.bottom)
  .append("g")
    .attr("transform",
          "translate(" + marginHom.left + "," + marginHom.top + ")");
 
 // X axis
 var xHom = d3.scaleBand()
- .range([ 0, width ])
+ .range([ 0, widthHom ])
  .domain(blackHomRates.map(function(d) { return d.group; }))
  .padding(0.2);
 homicide.append("g")
- .attr("transform", "translate(0," + height + ")")
+ .attr("transform", "translate(0," + heightHom + ")")
  .call(d3.axisBottom(xHom))
  .selectAll("text")
             .style("text-anchor", "end")
@@ -94,7 +94,7 @@ homicide.append("g")
 // Add Y axis
 var yHom = d3.scaleLinear()
  .domain([0, 45])
- .range([ height, 0]);
+ .range([ heightHom, 0]);
 homicide.append("g")
  .attr("class", "myYaxis")
  .call(d3.axisLeft(yHom));
@@ -114,7 +114,7 @@ function update_h(data_h) {
      .attr("x", function(d) { return xHom(d.group); })
      .attr("y", function(d) { return yHom(d.value); })
      .attr("width", xHom.bandwidth())
-     .attr("height", function(d) { return height - yHom(d.value); })
+     .attr("height", function(d) { return heightHom - yHom(d.value); })
      .attr("fill", "#69b3a2")
 }
 // Initialize the plot with the first dataset
@@ -582,8 +582,8 @@ svg_pp.append("text")
         .style("max-width", 400)
 
 
-var width_arms = 450
-    height_arms = 450
+var width_arms = 400
+    height_arms = 400
     margin_arms = 40
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -615,7 +615,7 @@ var data5_arms = {Gun: 455, Knife: 156, Other:198, Unarmed:63}
 // set the color scale
 var color_arms = d3.scaleOrdinal()
   .domain(["a", "b", "c", "d", "e", "f"])
-  .range(d3.schemeDark2);
+  .range(d3.schemeSet2); 
 
 // A function that create / update the plot for a given variable:
 function update_arms(data_arms) {
