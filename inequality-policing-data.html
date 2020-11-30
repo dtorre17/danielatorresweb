@@ -402,9 +402,13 @@
 									<div class="row">
 										<div class="column">
 												<div class="content">
-														<h2>Killings by age and race</h2>
+														<h2>Background</h2>
 														<p>
-																<h4>Background</h4>
+															These plots are designed to give you an understanding of the demographics of the victems of police violence.
+														</p>
+														<p>
+															In the plot to the right, you can mouse over the cells to get an approximate count of how many indivituals from each age
+															race and age have been killed by police violence.
 														</p>
 														<!-- image used to be here-->
 												</div>
@@ -428,11 +432,17 @@
 										<div class="column">
 												<div class="content">
 													<h2>Killings by State and Race</h2>
+													<p>
+														Click on each of these buttons to see where the victems of police violence lost thier lives.
+													</p>
+
 
 													<button onclick="update(data1_rm)" class="genric-btn info circle">European-American/White</button>
 													<button onclick="update(data2_rm)" class="genric-btn info circle">African-American/Black</button>
+													<p></p>
 													<button onclick="update(data3_rm)" class="genric-btn info circle">Asian/Pacific Islander</button>
 													<button onclick="update(data4_rm)" class="genric-btn info circle">Native American/Alaskan</button>
+													<p></p>
 													<button onclick="update(data5_rm)" class="genric-btn info circle">Hispanic/Latino</button>
 
 												</div>
@@ -451,25 +461,90 @@
 										</div>
 										</div>
 										<div class="column">
-											<h2>Define policies here</h2>
+											<h2>Backgroud</h2>
+
+											<p>
+												This correlation matrix is designed to show the lack of conformity of police policies. Click on the buttons below
+												for a further expliantion of what each term means. Insperiation for this plot was taken from curator of this dataset.
+											</p>
+											<div class="popup" onclick="popFunctrcr()"> <button class="genric-btn info circle">Requires Comprehensive Reporting</button>
+													<span class="popuptext" id="rcr">
+														Any use of force by a member of this department shall be documented promptly, completely and
+														accurately in an appropriate report, depending on the nature of the incident. The officer should
+														articulate the factors perceived and why he/she believed the use of force was reasonable under the
+														circumstances.
+													</span>
+											</div>
+											<div class="popup" onclick="popFunctdti()"> <button class="genric-btn info circle">Duty to Intervene</button>
+													<span class="popuptext" id="dti">
+A police officer is under a duty to intercede and prevent fellow officers from subjecting a citizen to excessive force, and may be held liable for his failure to do so if he observes the use of force and has sufficient time to act to prevent.
+													</span>
+											</div>
+											<p></p>
+											<div class="popup" onclick="popFunctrha()"> <button class="genric-btn info circle">Requires Exhaust All Other Means Before Shooting</button>
+													<span class="popuptext" id="rha">
+														Police officers shall use firearms with a high degree of restraint. Officers' use of firearms, therefore, shall never be considered a routine and is
+														permissible only in defense of life or to prevent serious bodily injury to the officer or others - and then only after all alternative means have been exhausted.
+													</span>
+											</div>
+											<p></p>
+											<div class="popup" onclick="popFunctrsa()"> <button class="genric-btn info circle">Restricts Shooting at Moving Vehicles</button>
+													<span class="popuptext" id="rsa">
+														Firearms shall not be discharged at a moving vehicle unless a person in the vehicle
+														is immediately threatening the officer or another person with deadly force by means
+														other than the vehicle.
+													</span>
+											</div>
+											<p></p>
+											<div class="popup" onclick="popFunctrwb()"> <button class="genric-btn info circle">Requires Warning Before Shooting</button>
+													<span class="popuptext" id="rwb">
+														When feasible, members shall identify themselves as a police officer and issue a warning before discharging a firearm.
+													</span>
+											</div>
+											<p></p>
+											<div class="popup" onclick="popFunctbca()"> <button class="genric-btn info circle">Bans Chokeholds and Strangleholds</button>
+													<span class="popuptext" id="bca">
+														Police Officers are prohibited from utilizing the Lateral Vascular Neck Restraint (LVNR), choke hold, neck hold, and/or any other
+														restraint that restricts free movement of the neck or head.
+													</span>
+											</div>
+											<p></p>
+											<div class="popup" onclick="popFuncthuo()"> <button class="genric-btn info circle">Has Use of Force Continuum</button>
+													<span class="popuptext" id="huo">
+														Law enforcement officers should use only the amount of force necessary to mitigate an incident, make an arrest, or protect themselves or others from harm. The levels, or continuum, of force police use include basic verbal and physical restraint, less-lethal force, and lethal force.
+
+													</span>
+											</div>
+											<div class="popup" onclick="popFunctrde()"> <button class="genric-btn info circle">Requires De-Escalation</button>
+													<span class="popuptext" id="rde">
+De-escalation tactics and techniques are actions used by officers, when safe and feasible without compromising law enforcement priorities, that seek to minimize the likelihood of the need to use force during an incident and increase the likelihood of voluntary compliance.
+													</span>
+											</div>
+											<p></p>
+
+
 										</div>
 									</div>
 								</div>
 
-
+							<h2 class="text-uppercase">Armedness of Victims</h4>
 							<div class="row">
 								<div class='column'>
-									<h2>Armedness of Victems</h2>
+									<h2>What were victims armmed with when they were killed?</h2>
 									<div id="pie_arms"></div>
 
 								</div>
 								<div class='column'>
-									<h2>Button Selectors</h2>
+									<h2>Select by Race</h2>
+
+									<p>Click the below buttons to reconstruct the pie chart for different races</p>
 
 									<button onclick="update_arms(data1_arms)" class="genric-btn info circle">European-American/White</button>
 									<button onclick="update_arms(data2_arms)" class="genric-btn info circle">African-American/Black</button>
+									<p></p>
 									<button onclick="update_arms(data3_arms)" class="genric-btn info circle">Asian/Pacific Islander</button>
 									<button onclick="update_arms(data4_arms)" class="genric-btn info circle">Native American/Alaskan</button>
+									<p></p>
 									<button onclick="update_arms(data5_arms)" class="genric-btn info circle">Hispanic/Latino</button>
 
 								</div>
@@ -627,8 +702,42 @@
         function popFunct() {
             var popup = document.getElementById("policeKillings");
             popup.classList.toggle("show");
-            }
+        }
+				function popFunctrcr() {
+            var popup = document.getElementById("rcr");
+            popup.classList.toggle("show");
+        }
+				function popFunctdti() {
+            var popup = document.getElementById("dti");
+            popup.classList.toggle("show");
+        }
+				function popFunctrha() {
+            var popup = document.getElementById("rha");
+            popup.classList.toggle("show");
+        }
+				function popFunctrsa() {
+            var popup = document.getElementById("rsa");
+            popup.classList.toggle("show");
+        }
+				function popFunctrwb() {
+            var popup = document.getElementById("rwb");
+            popup.classList.toggle("show");
+        }
+				function popFunctbca() {
+            var popup = document.getElementById("bca");
+            popup.classList.toggle("show");
+        }
+				function popFuncthuo() {
+            var popup = document.getElementById("huo");
+            popup.classList.toggle("show");
+        }
+				function popFunctrde() {
+            var popup = document.getElementById("rde");
+            popup.classList.toggle("show");
+        }
+
     </script>
+
 		<scrpit src="killing_by_age_race.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
