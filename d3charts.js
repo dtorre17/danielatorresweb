@@ -732,3 +732,343 @@ svg_arms
 
 // Initialize the plot with the first dataset
 update_arms(data1_arms)
+
+
+// eduardo's death by age
+
+// set the dimensions and margins of the graph
+var marginD = {top: 10, right: 30, bottom: 30, left: 60},
+    widthD = 460 - marginD.left - marginD.right,
+    heightD = 400 - marginD.top - marginD.bottom;
+
+// append the svg object to the body of the page
+var svg_d = d3.select("#deathsByAge")
+  .append("svg")
+    .attr("width", widthD + marginD.left + marginD.right)
+    .attr("height", heightD + marginD.top + marginD.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + marginD.left + "," + marginD.top + ")");
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsByAge.csv", function(data) {
+
+
+  // group the data: I want to draw one line per group
+  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { return d.name;})
+    .entries(data);
+
+  // Add X axis --> it is a date format
+  var xD = d3.scaleLinear()
+    .domain(d3.extent(data, function(d) { return d.year; }))
+    .range([ 0, widthD ]);
+  svg_d.append("g")
+    .attr("transform", "translate(0," + heightD + ")")
+    .call(d3.axisBottom(xD).ticks(5));
+
+  // Add Y axis
+  var yD = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return +d.n; })])
+    .range([ heightD, 0 ]);
+  svg_d.append("g")
+    .call(d3.axisLeft(yD));
+//////////////////////////////////////////////////////////////
+
+// This allows to find the closest X index of the mouse:
+ var bisect = d3.bisector(function(d) { return d.year; }).left;
+
+ // Create the circle that travels along the curve of chart
+ var focus = svg_d
+   .append('g')
+   .append('circle')
+     .style("fill", "none")
+     .attr("stroke", "black")
+     .attr('r', 8.5)
+     .style("opacity", 0)
+
+ // Create the text that travels along the curve of chart
+ var focusText = svg_d
+   .append('g')
+   .append('text')
+     .style("opacity", 0)
+     .attr("text-anchor", "left")
+     .attr("alignment-baseline", "middle")
+
+ // // Add the line
+ // svg
+ //   .append("path")
+ //   .datum(data)
+ //   .attr("fill", "none")
+ //   .attr("stroke", "steelblue")
+ //   .attr("stroke-width", 1.5)
+ //   .attr("d", d3.line()
+ //     .x(function(d) { return x(d.x) })
+ //     .y(function(d) { return y(d.y) })
+ //     )
+ //
+
+ // // Create a rect on top of the svg area: this rectangle recovers mouse position
+ // svg
+ //   .append('rect')
+ //   .style("fill", "none")
+ //   .style("pointer-events", "all")
+ //   .attr('width', width)
+ //   .attr('height', height)
+ //   .on('mouseover', mouseover)
+ //   .on('mousemove', mousemove)
+ //   .on('mouseout', mouseout);
+
+//
+ // What happens when the mouse move -> show the annotations at the right positions.
+ function mouseover() {
+   focus.style("opacity", 1)
+   focusText.style("opacity",1)
+ }
+
+ function mousemove() {
+   // recover coordinate we need
+   var x0 = xD.invert(d3.mouse(this)[0]);
+   var i = bisect(data, x0, 1);
+   selectedData = data[i]
+   focus
+     .attr("cx", xD(selectedData.x))
+     .attr("cy", yD(selectedData.y))
+   focusText
+     .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
+     .attr("x", xD(selectedData.x)+15)
+     .attr("y", yD(selectedData.y))
+   }
+
+  // color palette
+  var res = sumstat.map(function(d){ return d.key }) // list of group names
+  var color = d3.scaleOrdinal()
+    .domain(res)
+    .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
+
+  // Draw the line
+  svg_d.selectAll(".line")
+      .data(sumstat)
+      .enter()
+      .append("path")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return color(d.key) })
+        .attr("stroke-width", 1.5)
+        .attr("d", function(d){
+          return d3.line()
+            .x(function(d) { return xD(d.year); })
+            .y(function(d) { return yD(+d.n); })
+            (d.values)
+        })
+
+})
+
+//end eduardo's death by age
+
+//overtime proportional
+var marginP = {top: 10, right: 100, bottom: 30, left: 40},
+    widthP = 460 - marginP.left - marginP.right,
+    heightP = 400 - marginP.top - marginP.bottom;
+
+// append the svg object to the body of the page
+var svg_p = d3.select("#deathsOverTimeProportional")
+  .append("svg")
+    .attr("width", widthP + marginP.leftP + marginP.right)
+    .attr("height", heightP + marginP.top + marginP.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + marginP.left + "," + marginP.top + ")");
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsOverTimeProportional.csv", function(data) {
+
+    // List of groups (here I have one group per column)
+    var allGroup = ["White", "Black", "Latino", "Asian", "Native"]
+
+    // add the options to the button
+      d3.select("#selectButton")
+      .selectAll('myOptions')
+     	.data(allGroup)
+      .enter()
+    	.append('option')
+      .text(function (d) { return d; }) // text showed in the menu
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+
+    // Add X axis --> it is a date format
+    var xP = d3.scaleLinear()
+      .domain([2000,2019])
+      .range([ 0, widthP ]);
+    svg_p.append("g")
+      .attr("transform", "translate(0," + heightP + ")")
+      .call(d3.axisBottom(xP));
+
+    // Add Y axis
+    var yP = d3.scaleLinear()
+      .domain( [0,0.55])
+      .range([ heightP, 0 ]);
+    svg_p.append("g")
+      .call(d3.axisLeft(yP));
+
+    // Initialize line with group a
+    var lineP = svg_p
+      .append('g')
+      .append("path")
+        .datum(data)
+        .attr("d", d3.line()
+          .x(function(d) { return xP(+d.time) })
+          .y(function(d) { return yP(+d.White) })
+        )
+        .attr("stroke", "black")
+        .style("stroke-width", 4)
+        .style("fill", "none")
+    
+    var dotP = svg_p
+      .selectAll('circle')
+      .data(data)
+      .enter()
+      .append('circle')
+        .attr("cx", function(d) { return xP(+d.time) })
+        .attr("cy", function(d) { return yP(+d.White) })
+        .attr("r", 4.5)
+        .style("fill", "#69b3a2")
+
+    // A function that update the chart
+    function update_p(selectedGroup) {
+
+      // Create new data with the selection?
+      var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
+
+      // Give these new data to update line
+      lineP
+          .datum(dataFilter)
+          .transition()
+          .duration(1000)
+          .attr("d", d3.line()
+            .x(function(d) { return xP(+d.time) })
+            .y(function(d) { return yP(+d.value) })
+          )
+      dotP
+        .data(dataFilter)
+        .transition()
+        .duration(1000)
+          .attr("cx", function(d) { return xP(+d.time) })
+          .attr("cy", function(d) { return yP(+d.value) })
+    }
+
+    // When the button is changed, run the updateChart function
+    d3.select("#selectButton").on("change", function(d) {
+        // recover the option that has been chosen
+        var selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update_p(selectedOption)
+    })
+
+})
+
+//end of overtime proportional
+
+//total time
+// set the dimensions and margins of the graph
+var marginT = {top: 10, right: 100, bottom: 30, left: 40},
+    widthT = 460 - marginT.left - marginT.right,
+    heightT = 400 - marginT.top - marginT.bottom;
+
+// append the svg object to the body of the page
+var svg_t = d3.select("#deathsOverTimeTotal")
+  .append("svg")
+    .attr("width", widthT + marginT.left + marginT.right)
+    .attr("height", heightT + marginT.top + marginT.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + marginT.left + "," + marginT.top + ")");
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsOverTimeTotal.csv", function(data) {
+
+    // List of groups (here I have one group per column)
+    var allGroup = ["Total", "White", "Black", "Latino", "Asian", "Native"]
+
+    // add the options to the button
+    d3.select("#selectButtonTot")
+      .selectAll('myOptions')
+     	.data(allGroup)
+      .enter()
+    	.append('option')
+      .text(function (d) { return d; }) // text showed in the menu
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+    // Add X axis --> it is a date format
+    var xT = d3.scaleLinear()
+      .domain([2000,2019])
+      .range([ 0, widthT ]);
+    svg_t.append("g")
+      .attr("transform", "translate(0," + heightT + ")")
+      .call(d3.axisBottom(xT));
+
+    // Add Y axis
+    var yT = d3.scaleLinear()
+      .domain( [0,1750])
+      .range([ heightT, 0 ]);
+    svg_t.append("g")
+      .call(d3.axisLeft(yT));
+
+    // Initialize line with group a
+    var lineT = svg_t
+      .append('g')
+      .append("path")
+        .datum(data)
+        .attr("d", d3.line()
+          .x(function(d) { return xT(+d.time) })
+          .y(function(d) { return yT(+d.Total) })
+        )
+        .attr("stroke", "black")
+        .style("stroke-width", 4)
+        .style("fill", "none")
+
+    // Initialize dots with group a
+    var dotT = svg_t
+      .selectAll('circle')
+      .data(data)
+      .enter()
+      .append('circle')
+        .attr("cx", function(d) { return xT(+d.time) })
+        .attr("cy", function(d) { return yT(+d.Total) })
+        .attr("r", 4.5)
+        .style("fill", "#69b3a2")
+
+
+    // A function that update the chart
+    function update_t(selectedGroup) {
+
+      // Create new data with the selection?
+      var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
+
+      // Give these new data to update line
+      lineT
+          .datum(dataFilter)
+          .transition()
+          .duration(1000)
+          .attr("d", d3.line()
+            .x(function(d) { return xT(+d.time) })
+            .y(function(d) { return yT(+d.value) })
+          )
+      dotT
+        .data(dataFilter)
+        .transition()
+        .duration(1000)
+          .attr("cx", function(d) { return xT(+d.time) })
+          .attr("cy", function(d) { return yT(+d.value) })
+    }
+
+    // When the button is changed, run the updateChart function
+    d3.select("#selectButtonTot").on("change", function(d) {
+        // recover the option that has been chosen
+        var selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update_t(selectedOption)
+    })
+
+})
+
+//end total time

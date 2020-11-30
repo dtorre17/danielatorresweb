@@ -331,11 +331,15 @@
                             
                         </div>
                     </div>
+                </div>
+                <div class="section-top-border"></div>
+                <div class="row"> 
                     <div class="col-lg-6">
+                       
                         <div class="left_img">
 
                     <!-- Create a div where the graph will take place Avg.Annual.Police.Homicide.Rate -->
-                    <h3 class="text-uppercase">AVERAGE ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h3>
+                        <h3 class="text-uppercase">AVERAGE ANNUAL HOMICIDE RATES BY MAJOR POLICE DEPARTMENTS</h3>
                             <div id="policehomicides"></div>
                             <!-- <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->
                         </div>
@@ -360,7 +364,60 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <h4>Fatal Interactions With Police Over Time</h4>
+                        <p>
+                            Much of the demand from the protests and unrest deals with the fact that American
+                            police kill and imprison more people when compared to other developed countries.
+                            For example, when compared to countries like Australia and the UK. For every 100k arrests,
+                            the US 12 deaths in custody (as compared to just 5 in Australia and 2 in the UK).
+                            Evaluating the police shootings reveals an even starker contrast. For every 10 million people,
+                            police shot and killed 31 in the US. This compared to just 11 in Germany, 8 in Australia,
+                            and 3 in the UK.
+                        </br>
+                        The policing problem in the United States is very evident when viewed through these
+                        data. For this reason, the steady increase in fatal interactions since 2000, ahead of
+                        population increase, is something that must addressed.
+                        </p>
+                        <div class="col-lg-6">
+                       
+                            <div class="left_img">
+                            <h3>Total Fatal Interactions With Police From 2000 to 2019 by Race</h3>
+                        <!-- Create a div where the graph will take place Avg.Annual.Police.Homicide.Rate -->
+                            <select class="default-select" id="selectButtonTot"></select>        
+                            <div id="deathsOverTimeTotal"></div>
+                                
+                                <!--<div class="default-select" id="default-select">
+                                    <select>
+                                        <option value="1">English</option>
+                                        <option value="1">Spanish</option>
+                                        <option value="1">Arabic</option>
+                                        <option value="1">Portuguise</option>
+                                        <option value="1">Bengali</option>
+                                    </select>
+                                </div>
+                                 <button onclick="update(allHomRates)">All Homicide Rates by Police</button> -->
+                            </div>
+                        </div>
+                        <div class="offset-lg-1 col-lg-5">
+                            <div class="portfolio_right_text">
+                                <h3>Fatal Interactions With Police From 2000 to 2019 by Race Proportional to Population</h3>
+                                <select id="selectButton">
+                                    <option id="selectButton" value="White">White</option>
+                                    <option id="selectButton" value="Black">Black</option>
+                                    <option id="selectButton" value="Latino">Latino</option>
+                                    <option id="selectButton"value="Asian">Asian</option>
+                                    <option id="selectButton"value="Native">Native American</option>
+                                </select>
+                                <div id="deathsOverTimeProportional"></div>
+                                                    
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
+                
                 <div class="section-top-border"></div>
                 <h2 class="text-uppercase">THE STOP-AND-FRISK</h4>
                 <div class="row">
@@ -443,7 +500,7 @@
 
 
 
-								<h2 class="text-uppercase">POLICE KILLINGS BY AGE RACE AND STATE</h4>
+								<h2 class="text-uppercase">POLICE KILLINGS BY AGE, RACE AND STATE</h4>
 									<div class="row">
 										<div class="column">
 												<div class="content">
@@ -465,7 +522,47 @@
 												</div>
 										</div>
 
+                                    </div> <!-- end killings by age and race #1 -->
+                                    
+                                    <!-- start killings by age and race #2 -->
+                                    <div class="row">
+										<div class="column">
+												<div class="content">
+														<h4>How does inequality in policing affect minors?</h4>
+														<p style="padding-right: 20px;">
+															There have been many high-profile cases over the past few years that have shed light
+                                                            on the police violence for racial minorities. With cases such as Freddy Gray (25),
+                                                            Ahmaud Arbery (25), Tamir Rice (12), Micheal Brown (18), Laquan McDonald (17), and
+                                                            many others, the question is also raised about the affects racial discrimination
+                                                            on age.
+                                                            <br>
+                                                            From the graph, we can see that there is significant overlap between both majority (defined
+                                                            as European-American/ White) and minority groups (defined as Black, Latino, Asian, and Native American),
+                                                            with both minority and majority racial groups peaking before forty. However, when looking
+                                                            at the minority groups, there is a clear discrepancy between the curves. Specifically, around the
+                                                            age period from 15-30. Minority groups are much more likely to fatally interact with police.
+                                                            <br>
+															This issue is further highlighted when viewing the United States justice and court
+                                                            systems. While black youth form only about 14% of the total youth population, they
+                                                            constitute 47.3% of the youth who are transferred to adult court by juvenile court judges.
+                                                            Currently, each year about 250,000 youths are tried as adults within the court system.
+                                                            Despite only making up 14% of youth population, the percentage of black defendants is
+                                                            roughly 62%.
+                                                        </p>
+                                                            <p style="padding-right: 20px;"></p>
+														</p>
+														<!-- image used to be here-->
+												</div>
+										</div>
+										<div class="column">
+												<div class="content">
+														<h3 style="padding-left: 20px;">Age Distribution With Respect to Racial Status</h3>
+														<div id="deathsByAge"></div>
+												</div>
+										</div>
+
 									</div>
+                                        <!-- end killings by age and race #2 -->
 									<div class="row">
 										<div class="column">
 												<div class="content">
