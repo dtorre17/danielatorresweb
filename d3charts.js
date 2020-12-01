@@ -382,7 +382,7 @@ d3.csv("https://raw.githubusercontent.com/mfleming99/data-host/master/tmp.csv", 
   }
   var mousemove = function(d) {
     tooltip
-      .html("The exact value of<br>this cell is: " + d.value)
+      .html("The number of " + d.group + " victims aged <br>" + d.variable +" is: " + d.value)
       .style("position-absolute")
       // .style("left", (d3.mouse(this)[0]) + "px")
       // .style("top", (d3.mouse(this)[1]-1000) + "px")
@@ -682,7 +682,7 @@ var data5_arms = {Gun: 455, Knife: 156, Other:198, Unarmed:63}
 // set the color scale
 var color_arms = d3.scaleOrdinal()
   .domain(["a", "b", "c", "d", "e", "f"])
-  .range(d3.schemeSet2); 
+  .range(["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949"]); 
 
 // A function that create / update the plot for a given variable:
 function update_arms(data_arms) {
@@ -844,7 +844,7 @@ d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsB
   var res = sumstat.map(function(d){ return d.key }) // list of group names
   var color = d3.scaleOrdinal()
     .domain(res)
-    .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
+    .range(["#76b7b2","#af7aa1","#ff9da7","#9c755f","#bab0ab"])
 
   // Draw the line
   svg_d.selectAll(".line")
@@ -897,7 +897,7 @@ d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsO
 
     // Add X axis --> it is a date format
     var xP = d3.scaleLinear()
-      .domain([2000,2019])
+      .domain([0,19])
       .range([ 0, widthP ]);
     svg_p.append("g")
       .attr("transform", "translate(0," + heightP + ")")
@@ -1000,7 +1000,7 @@ d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsO
 
     // Add X axis --> it is a date format
     var xT = d3.scaleLinear()
-      .domain([2000,2019])
+      .domain([0,19])
       .range([ 0, widthT ]);
     svg_t.append("g")
       .attr("transform", "translate(0," + heightT + ")")
@@ -1062,7 +1062,7 @@ d3.csv("https://raw.githubusercontent.com/eaguila6/dataStructures/master/deathsO
     }
 
     // When the button is changed, run the updateChart function
-    d3.select("#selectButtonTot").on("change", function(d) {
+    d3.select("#selectButtonTot").on("click", function(d) {
         // recover the option that has been chosen
         var selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option

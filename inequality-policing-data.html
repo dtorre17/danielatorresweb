@@ -369,7 +369,7 @@
                         <p>
                             Much of the demand from the protests and unrest deals with the fact that American
                             police kill and imprison more people when compared to other developed countries.
-                            For example, when compared to countries like Australia and the UK. For every 100k arrests,
+                            For example, when compared to countries like Australia and the UK. <a href="https://www.cnn.com/2020/06/08/us/us-police-floyd-protests-country-comparisons-intl/index.html">every 100k arrests,</a> 
                             the US 12 deaths in custody (as compared to just 5 in Australia and 2 in the UK).
                             Evaluating the police shootings reveals an even starker contrast. For every 10 million people,
                             police shot and killed 31 in the US. This compared to just 11 in Germany, 8 in Australia,
@@ -384,7 +384,14 @@
                             <div class="left_img">
                             <h3>Total Fatal Interactions With Police From 2000 to 2019 by Race</h3>
                         <!-- Create a div where the graph will take place Avg.Annual.Police.Homicide.Rate -->
-                            <select class="default-select" id="selectButtonTot"></select>        
+                            <select id="selectButtonTot">
+                                <option value="Total">Total</option>
+                                    <option value="White">White</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Latino">Latino</option>
+                                    <option value="Asian">Asian</option>
+                                    <option value="Native">Native American</option>
+                            </select>        
                             <div id="deathsOverTimeTotal"></div>
                                 
                                 <!--<div class="default-select" id="default-select">
@@ -401,13 +408,13 @@
                         </div>
                         <div class="offset-lg-1 col-lg-5">
                             <div class="portfolio_right_text">
-                                <h3>Fatal Interactions With Police From 2000 to 2019 by Race Proportional to Population</h3>
+                                <h3>Fatal Interactions From 2000 to 2019 by Race Proportional to Population</h3>
                                 <select id="selectButton">
-                                    <option id="selectButton" value="White">White</option>
-                                    <option id="selectButton" value="Black">Black</option>
-                                    <option id="selectButton" value="Latino">Latino</option>
-                                    <option id="selectButton"value="Asian">Asian</option>
-                                    <option id="selectButton"value="Native">Native American</option>
+                                    <option value="White">White</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Latino">Latino</option>
+                                    <option value="Asian">Asian</option>
+                                    <option value="Native">Native American</option>
                                 </select>
                                 <div id="deathsOverTimeProportional"></div>
                                                     
@@ -536,16 +543,16 @@
                                                             many others, the question is also raised about the affects racial discrimination
                                                             on age.
                                                             <br>
-                                                            From the graph, we can see that there is significant overlap between both majority (defined
-                                                            as European-American/ White) and minority groups (defined as Black, Latino, Asian, and Native American),
+                                                            From the graph, we can see that there is significant overlap between both the majority (red line) (defined
+                                                            as European-American/ White), and blue line, minority groups (defined as Black, Latino, Asian, and Native American),
                                                             with both minority and majority racial groups peaking before forty. However, when looking
                                                             at the minority groups, there is a clear discrepancy between the curves. Specifically, around the
                                                             age period from 15-30. Minority groups are much more likely to fatally interact with police.
                                                             <br>
 															This issue is further highlighted when viewing the United States justice and court
                                                             systems. While black youth form only about 14% of the total youth population, they
-                                                            constitute 47.3% of the youth who are transferred to adult court by juvenile court judges.
-                                                            Currently, each year about 250,000 youths are tried as adults within the court system.
+                                                            constitute <a href="http://www.njjn.org/about-us/keep-youth-out-of-adult-prisons">47.3% of the youth</a> who are transferred to adult court by juvenile court judges.
+                                                            Currently, <a href="https://witnessla.com/as-youth-crime-continues-to-fall-black-kids-far-more-likely-to-be-tried-as-adults-according-to-new-report/">each year about 250,000 youths</a> are tried as adults within the court system.
                                                             Despite only making up 14% of youth population, the percentage of black defendants is
                                                             roughly 62%.
                                                         </p>
@@ -670,12 +677,12 @@ De-escalation tactics and techniques are actions used by officers, when safe and
 							<h2 class="text-uppercase">Armedness of Victims</h4>
 							<div class="row">
 								<div class='column'>
-									<h3>What were victims armmed with when they were killed by police?</h3>
+									<h3>What were victims armed with when they were killed by police?</h3>
 									<div id="pie_arms"></div>
 
 								</div>
 								<div class='column'>
-									<h2>Select by Race</h2>
+									<h4>Select by Race</h4>
 
 									<p>Click the below buttons to reconstruct the pie chart for different races</p>
 
@@ -689,116 +696,26 @@ De-escalation tactics and techniques are actions used by officers, when safe and
 
 								</div>
 
-							</div>					
-
-
-                <!--================ VID
-                <div class="row">
-                    <div class="offset-lg-1 col-lg-5">
-                        <div class="portfolio_right_text mt-30">
-                            <h2 class="text-uppercase">Lo-Fidelty Prototype</h4>
-                            <p>
-                                To optimize screen space and minimze time spent looking for playlists, my lo-fidelty, paper prototype
-                                introduces more customization with the navigation bars. The prototype also introduces a way to view
-                                playlists with their own page-view, rather than only on the left-side nav bar.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="left_img" style="padding-left: 25px;">
-                            <img class="img-fluid" src="img/portfolio/spot.jpeg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="filters-content">
-				<div class="row portfolio-grid justify-content-center">
-					<div class="col-lg-4 col-md-6 all">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/a1-planning.jpeg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/a1-planning.jpeg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<p>Initial planning sketch</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/a1-home.jpeg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/a1-home.jpeg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<p>Home page</p>
-							</div>
-						</div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/a1-p1.jpeg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/a1-p1.jpeg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<p>Page view of all saved playlists</p>
-							</div>
-						</div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/a1-p2.jpeg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/a1-p2.jpeg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<p>Bookmarked playlists</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-            =================-->
-            <!--===========
-            <section class="newsletter_area"></section>
-                <div class="container">
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-lg-12">
-                            <div class="subscription_box text-center">
-                                <h2 class="text-uppercase text-white" style="padding: 10px;">evaluation</h2>
-                                <div class="subcribe-form" id="mc_embed_signup">
-
-
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tt0_AQI1RLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>					
+                        <div class="section-top-border"></div>
+                        <h2 class="text-uppercase">CONCLUSION</h2>
+                                <div class="row">
+                                    <div class='column'>
+                                        <p>
+                                            We hope our analysis has given an objective visualization of the biased police practice that exists across the nation. The recent
+                                            growth in available data from police departments is a step in the right direction to begin implementing nationwide reform. 
+                                            We conclude that standardized data collection practices and policing tactics are required to diminish the racially-motivated
+                                            prejudice that results in harm and sometimes even the life of marginalized peoples. Holding police departments accountable
+                                            can begin to be implemented by routinely collecting data and targeting which kinds of practices should be prioritized 
+                                            so as to minimize violent encounters between police and civilians. 
+                                            <br> 
+                                            Group members: Eduardo Aguila, Max Flemming, Daniela Torres
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            ============-->
+
+
               <!--================ end video Area =================-->
         </div>
 
