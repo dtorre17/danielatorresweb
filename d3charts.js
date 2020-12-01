@@ -599,7 +599,7 @@ d3.csv("https://raw.githubusercontent.com/mfleming99/data-host/master/force_poli
   }
   var mousemove = function(d) {
     tooltip_pp
-      .html("The exact value of<br>this cell is: " + d.value)
+      .html("The correlation between " + d.group + "<br> and " + d.variable + " is: " + d.value)
       .style("position-relative")
       // .style("left", (d3.mouse(this)[0]+70) + "px")
       // .style("top", (d3.mouse(this)[1]) + "px")
